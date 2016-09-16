@@ -5,16 +5,44 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Employee Details</title>
+    <title>Student Details</title>
 </head>
+<style>body {background-color: lightskyblue;}
+
+    tr:hover {
+        background-color: #555;
+        color: white;
+    }
+body {background-color: white  ;}
+
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 45%;
+}
+
+td, th {
+    border: 2px solid #566573 ;
+    text-align: left;
+    padding: 8px;
+}
+
+tr:nth-child(even) {
+    background-color: #dddddd ;
+}
+
+
+
+</style>
 <body>
-Hello
-<h3>To-Do List </h3>
-<table border="1">
+<h2>Information on Students </h2>
+<table border="3">
+    <tr><th>First Name:</th><th>Last Name:</th><th>Gpa:</th><th>Link:</th> </tr>
     <c:forEach items="${stufftodo}" var="aToDo">
         <tr>
-            <td>Do This!:</td>
             <td> <c:out value="${aToDo.name}"/></td>
+            <td> <c:out value="${aToDo.last}"/></td>
+            <td> <c:out value="${aToDo.gpa}"/></td>
             <td><a href="/myweb/hello?action=detail&id=<c:out value="${aToDo.id}"/>"> View Detail</a></td>
         </tr>
     </c:forEach>
