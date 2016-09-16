@@ -9,13 +9,15 @@
 </head>
 <body>
 Hello
-<h3>To-Do List </h3>
+<h3>Students </h3>
 <table border="1">
-    <c:forEach items="${stufftodo}" var="aToDo">
+    <tr><td>First Name</td><td>Last Name</td><td>GPA</td></tr>
+    <c:forEach items="${listOfAllStudents}" var="aStudent">
         <tr>
-            <td>Do This!:</td>
-            <td> <c:out value="${aToDo.name}"/></td>
-            <td><a href="/myweb/hello?action=detail&id=<c:out value="${aToDo.id}"/>"> View Detail</a></td>
+            <td> <c:out value="${aStudent.firstName}"/></td>
+            <td> <c:out value="${aStudent.lastName}"/></td>
+            <td> <c:out value="${aStudent.gpa}"/></td>
+            <td><a href="/myweb/hello?action=detail&id=<c:out value="${aStudent.id}"/>"> View Details</a></td>
         </tr>
     </c:forEach>
 </table>

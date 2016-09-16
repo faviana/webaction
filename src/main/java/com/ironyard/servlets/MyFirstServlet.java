@@ -1,7 +1,7 @@
 package com.ironyard.servlets;
 
-import com.ironyard.data.ToDoItem;
-import com.ironyard.service.ToDoService;
+import com.ironyard.data.Student;
+import com.ironyard.service.StudentService;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -9,7 +9,6 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.io.PrintWriter;
 import java.util.List;
 
 /**
@@ -40,12 +39,12 @@ public class MyFirstServlet extends HttpServlet {
     private void showDetail(HttpServletRequest request,
                             HttpServletResponse response) throws ServletException, IOException {
 
-        ToDoService todoServ = new ToDoService();
-        List<ToDoItem> items = todoServ.getAllToDoItems();
+        StudentService todoServ = new StudentService();
+        List<Student> items = todoServ.getAllStudents();
         long requestedId = Long.parseLong(request.getParameter("id"));
-        for(ToDoItem t:items){
-            if(t.getId() == requestedId){
-                request.setAttribute("detailToDo",t);
+        for(Student tmpStudent:items){
+            if(tmpStudent.getId() == requestedId){
+                request.setAttribute("theStudentThatWasClicked",tmpStudent);
                 break;
             }
         }
@@ -56,9 +55,9 @@ public class MyFirstServlet extends HttpServlet {
 
     private void showList(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         // do some work
-        ToDoService todoServ = new ToDoService();
-        List<ToDoItem> items = todoServ.getAllToDoItems();
-        request.setAttribute("stufftodo",items);
+        StudentService studentService = new StudentService();
+        List<Student> all = studentService.getAllStudents();
+        request.setAttribute("listOfAllStudents",all);
 
         // then forward to JSP for display
         RequestDispatcher dispatcher = this.getServletContext().getRequestDispatcher("/index.jsp");
