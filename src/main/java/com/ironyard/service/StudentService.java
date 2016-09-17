@@ -39,10 +39,10 @@ public class StudentService {
         JohnyAssignments.add(new Assignment("Final Project", 75.9, 100.0));
 
 
-        foundAll.add(new Student("Raul", "Lavin", 3.55, 25, "111-555-4394", 1, RaulAssignments));
-        foundAll.add(new Student("Max", "Johnson", 4.0, 30, "145-444-3897", 2, MaxAssignments));
-        foundAll.add(new Student("Mindy", "Lawrence", 2.85, 22, "123-456-7890", 3, MindyAssignments));
-        foundAll.add(new Student("Johnny", "Lavin", 2.42, 35, "155-555-1987", 4, JohnyAssignments));
+        foundAll.add(new Student("Raul", "Lavin",  25, "111-555-4394", 1, RaulAssignments));
+        foundAll.add(new Student("Max", "Johnson",  30, "145-444-3897", 2, MaxAssignments));
+        foundAll.add(new Student("Mindy", "Lawrence", 22, "123-456-7890", 3, MindyAssignments));
+        foundAll.add(new Student("Johnny", "Lavin", 35, "155-555-1987", 4, JohnyAssignments));
         return foundAll;
     }
 }

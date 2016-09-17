@@ -8,24 +8,22 @@ import java.util.List;
 public class Student {
     private String name;
     private String last;
-    private double gpa;
     private long id;
     private List<Assignment> assignments;
     private String ssn;
     private int age;
 
 
-    public Student(String aName, String aLast, double agpa, int aAge, String assn, long anId,
+    public Student(String aName, String aLast, int aAge, String assn, long anId,
                    List<Assignment> StudentAssignments) {
         name = aName;
         last = aLast;
-        gpa = agpa;
         age = aAge;
         ssn = assn;
         id = anId;
         assignments = StudentAssignments;
-    }
 
+    }
 
 
     public String getName() {
@@ -44,13 +42,34 @@ public class Student {
         this.last = last;
     }
 
-    public double getGpa() {
+    public double getgpa() {
+        double gpa = 0;
+        int x = 0;
+        // loop through assignemts
+         for (Assignment tmp: assignments){
+             if (gpa <= 100 && gpa  >= 90){
+                 x = 4;
+             }
+               else if(gpa <= 89 && gpa >= 80){
+                 x = 3;
+             }
+             else if(gpa <= 79 && gpa >= 70){
+                 x = 2;
+             }
+              else if(gpa <= 69 && gpa >= 60){
+                 x = 1;
+             }
+              else if(gpa <= 59 && gpa >= 0){
+                 x = 0;
+             }
+             gpa = gpa + x;
+
+         }
+
+        gpa  = gpa / assignments.size();
         return gpa;
     }
 
-    public void setGpa(double gpa) {
-        this.gpa = gpa;
-    }
 
     public long getId() {
         return id;
@@ -87,4 +106,5 @@ public class Student {
     public String toString() {
         return getName();
     }
+    
 }
