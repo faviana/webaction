@@ -5,17 +5,20 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Employee Details</title>
+    <title>Student Details</title>
 </head>
 <body>
 Hello
-<h3>To-Do List </h3>
+<h3>List of Students </h3>
 <table border="1">
     <c:forEach items="${stufftodo}" var="aToDo">
         <tr>
-            <td>Do This!:</td>
-            <td> <c:out value="${aToDo.name}"/></td>
-            <td><a href="/myweb/hello?action=detail&id=<c:out value="${aToDo.id}"/>"> View Detail</a></td>
+            <td> <c:out value="${aToDo.firstname}"/></td>
+            <td> <c:out value="${aToDo.lastname}"/></td>
+            <td> <c:out value="${aToDo.ssn}"/></td>
+            <td> <c:out value="${aToDo.age}"/></td>
+            <td> <c:out value="${aToDo.gpa}"/></td>
+            <td><a href="/myweb/hello?action=detail&id=<c:out value="${aToDo.id}"/>"> View Grade Details</a></td>
         </tr>
     </c:forEach>
 </table>

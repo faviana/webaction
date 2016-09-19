@@ -1,7 +1,8 @@
 package com.ironyard.servlets;
 
-import com.ironyard.data.ToDoItem;
-import com.ironyard.service.ToDoService;
+import com.ironyard.data.Grade;
+import com.ironyard.data.Student;
+import com.ironyard.service.StudentService;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -9,7 +10,6 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.io.PrintWriter;
 import java.util.List;
 
 /**
@@ -40,24 +40,31 @@ public class MyFirstServlet extends HttpServlet {
     private void showDetail(HttpServletRequest request,
                             HttpServletResponse response) throws ServletException, IOException {
 
-        ToDoService todoServ = new ToDoService();
-        List<ToDoItem> items = todoServ.getAllToDoItems();
+        StudentService studentServ = new StudentService();
+
+        List<Student> items = studentServ.getAllStudents();
+
         long requestedId = Long.parseLong(request.getParameter("id"));
-        for(ToDoItem t:items){
-            if(t.getId() == requestedId){
-                request.setAttribute("detailToDo",t);
+        for (Student t:items) {
+            if (t.getId() == requestedId) {
+                request.setAttribute("detailToDo", t);
                 break;
             }
         }
 
         RequestDispatcher dispatcher = this.getServletContext().getRequestDispatcher("/detail.jsp");
-        dispatcher.forward(request,response);
+        dispatcher.forward(request, response);
+
     }
+
+
+
+
 
     private void showList(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         // do some work
-        ToDoService todoServ = new ToDoService();
-        List<ToDoItem> items = todoServ.getAllToDoItems();
+        StudentService studentServ = new StudentService();
+        List<Student> items = studentServ.getAllStudents();
         request.setAttribute("stufftodo",items);
 
         // then forward to JSP for display
@@ -65,3 +72,14 @@ public class MyFirstServlet extends HttpServlet {
         dispatcher.forward(request,response);
     }
 }
+
+
+
+ /* List<Grade> grades = gradeServ.getmyGrades();
+        long sameId = Long.parseLong(request.getParameter("id"));
+        for(Grade oneStudent:grades){
+            if(oneStudent.getId() == sameId){
+                request.setAttribute("detailGrade",oneStudent);
+                break;
+            }
+        } */
