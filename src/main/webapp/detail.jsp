@@ -49,7 +49,7 @@
         </tr>
         <tr>
             <th>GPA:</th>
-            <td> <c:out value="${detailToDo.gpa}"/></td>
+            <td> <c:out value="${detailToDo.score}"/></td>
         </tr>
     <tr>
         <th>Age:</th>

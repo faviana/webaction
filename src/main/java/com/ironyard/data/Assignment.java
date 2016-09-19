@@ -6,7 +6,7 @@ package com.ironyard.data;
 public class Assignment {
 
     private String assignt;
-    private double score;
+    public double score;
     private double totalpossible;
 
     public Assignment(String aAssignment, double ascore, double atotalpossible ){

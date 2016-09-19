@@ -42,7 +42,7 @@ tr:nth-child(even) {
         <tr>
             <td> <c:out value="${aToDo.name}"/></td>
             <td> <c:out value="${aToDo.last}"/></td>
-            <td> <c:out value="${aToDo.gpa}"/></td>
+            <td> <c:out value="${aToDo.score}"/></td>
             <td><a href="/myweb/hello?action=detail&id=<c:out value="${aToDo.id}"/>"> View Detail</a></td>
         </tr>
     </c:forEach>

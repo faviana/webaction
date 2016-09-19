@@ -12,6 +12,7 @@ public class Student {
     private List<Assignment> assignments;
     private String ssn;
     private int age;
+    private double gpa;
 
 
     public Student(String aName, String aLast, int aAge, String assn, long anId,
@@ -42,31 +43,28 @@ public class Student {
         this.last = last;
     }
 
-    public double getgpa() {
+    public double getScore() {
         double gpa = 0;
+        double score = 0;
         int x = 0;
         // loop through assignemts
-         for (Assignment tmp: assignments){
-             if (gpa <= 100 && gpa  >= 90){
-                 x = 4;
-             }
-               else if(gpa <= 89 && gpa >= 80){
-                 x = 3;
-             }
-             else if(gpa <= 79 && gpa >= 70){
-                 x = 2;
-             }
-              else if(gpa <= 69 && gpa >= 60){
-                 x = 1;
-             }
-              else if(gpa <= 59 && gpa >= 0){
-                 x = 0;
-             }
-             gpa = gpa + x;
+        for (Assignment tmp : assignments) {
+            if (tmp.getScore() <= 100 && tmp.getScore() >= 90) {
+                x = 4;
+            } else if (tmp.getScore() <= 89 && tmp.getScore() >= 80) {
+                x = 3;
+            } else if (tmp.getScore() <= 79 && tmp.getScore() >= 70) {
+                x = 2;
+            } else if (tmp.getScore() <= 69 && tmp.getScore() >= 60) {
+                x = 1;
+            } else if (tmp.getScore() <= 59 && tmp.getScore() >= 0) {
+                x = 0;
+            }
+            score = score + x;
 
-         }
+        }
 
-        gpa  = gpa / assignments.size();
+        gpa = score / assignments.size();
         return gpa;
     }
 
@@ -106,5 +104,14 @@ public class Student {
     public String toString() {
         return getName();
     }
-    
+
+    public double getGpa() {
+        return gpa;
+    }
+
+    public void setGpa(double gpa) {
+        this.gpa = gpa;
+    }
 }
+
+
