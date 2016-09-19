@@ -15,4 +15,14 @@
     <url-pattern>/hello</url-pattern>
   </servlet-mapping>
 
+  <servlet>
+    <servlet-name>StudentServlet</servlet-name>
+    <servlet-class>com.ironyard.servlets.StudentServlet</servlet-class>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>StudentServlet</servlet-name>
+    <url-pattern>/student</url-pattern>
+  </servlet-mapping>
+
 </web-app>
