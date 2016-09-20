@@ -20,7 +20,7 @@ public class Student {
 
 
 
-    public List<Grade> getMyGrades(List<Grade> myGrades) { return this.myGrades; }
+    public List<Grade> getMyGrades() { return this.myGrades; }
 
     public void setMyGrades(List<Grade> myGrades) { this.myGrades = myGrades; }
 

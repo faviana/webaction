@@ -43,10 +43,10 @@ Hello
 </table>
 
 <table border="1">
-<c:forEach items="${detailToDo}" var="detailToDo">
+<c:forEach items="${detailToDo.myGrades}" var="detailToDo">
     <tr>
         <td>Assignment Name:</td>
-        <td> <c:out  value="${detailToDo.assignemntname}"/></td>
+        <td> <c:out  value="${detailToDo.assignmentname}"/></td>
     </tr>
     <tr>
         <td>Possible Points:</td>
@@ -59,7 +59,7 @@ Hello
 </c:forEach>
 </table>
 
-    <a href=http://localhost:8080/myweb/hello<c:out value="${aToDo.id}"/>"> Back To Student Details</a>
+    <a href="http://localhost:8080/myweb/hello"> Back To Student List</a>
 
 
 </body>
